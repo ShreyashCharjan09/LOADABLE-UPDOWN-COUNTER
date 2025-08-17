@@ -1,7 +1,8 @@
-module counter_updown(clk, load_en, updown, count);
+module counter_updown(clk, load_en, updown, load, count);
 input clk;
 input load_en;
-input updown; 
+input updown;
+input [3:0]load; 
 output reg [3:0]count;
 
 
@@ -11,7 +12,7 @@ begin
     begin
         if(load_en)
             begin
-            count <= 4'd1;   
+            count <= load;   
             end
         else
             begin
@@ -22,7 +23,7 @@ begin
     begin
         if(load_en)
             begin
-            count <= 4'd14;   
+            count <= load;   
             end
         else
             begin
@@ -31,4 +32,3 @@ begin
     end
 end
 endmodule
-
