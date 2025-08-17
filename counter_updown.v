@@ -5,7 +5,8 @@ input updown;
 input [3:0]load; 
 output reg [3:0]count;
 
-
+//test
+    
 always@(posedge clk)
 begin
     if(updown)
